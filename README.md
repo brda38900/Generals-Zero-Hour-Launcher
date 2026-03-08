@@ -47,7 +47,7 @@
 
 1. Download the latest release from the [Releases page](../../releases)
 2. Extract the ZIP to any folder
-3. Run `Launcher.ahk` (requires AutoHotkey v2) **or** run the compiled `.exe`
+3. Run `GeneralsLauncher.ahk` (requires AutoHotkey v2) **or** run the compiled `.exe`
 
 > The launcher will automatically search for your game installation. If not found, it will prompt you to select the folder manually.
 
