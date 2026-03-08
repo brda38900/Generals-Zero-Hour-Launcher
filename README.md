@@ -111,13 +111,13 @@ Need help? Join the Discord support channel:
 
 [![Discord](https://img.shields.io/badge/Discord-Support_Channel-5865f2?style=for-the-badge&logo=discord)](https://discord.com/channels/925092720538689536/1279438595190558853)
 
-**Discord:** `abdulrahman2023.1`
+**Discord:** `reizanx`
 
 ---
 
 ## 👨‍💻 Author
 
-Made with ❤️ by **Abdulrahman**
+Made with ❤️ by **ReizanTech**
 
 ---
 
