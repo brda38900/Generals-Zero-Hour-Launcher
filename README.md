@@ -1,4 +1,8 @@
+<div dir="rtl">
 
+# 📝 ملف README.md
+
+</div>
 
 ```markdown
 <div align="center">
@@ -7,516 +11,309 @@
 
 ### Professional Game Launcher for Command & Conquer: Generals - Zero Hour
 
-[![Version](https://img.shields.io/badge/Version-2.4.0-blue?style=for-the-badge)](https://github.com/yourusername/zh-launcher/releases)
-[![AutoHotkey](https://img.shields.io/badge/AutoHotkey-v2.0+-green?style=for-the-badge&logo=autohotkey)](https://www.autohotkey.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows)](https://www.microsoft.com/windows)
+![Version](https://img.shields.io/badge/Version-2.4.0-blue?style=for-the-badge)
+![AutoHotkey](https://img.shields.io/badge/AutoHotkey-v2.0+-green?style=for-the-badge&logo=autohotkey)
+![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+
+<br>
 
 <img src="https://img.shields.io/badge/Made%20with-❤️-red?style=for-the-badge" alt="Made with Love">
 
----
+**A feature-rich, professional launcher for C&C Generals: Zero Hour with automatic game detection, theme support, and integrated tool management.**
 
-**A modern, lightweight, and feature-rich launcher for C&C Generals Zero Hour**
-**with automatic game detection, tool management, and multi-language support.**
-
-[📥 Download](#-installation) •
-[✨ Features](#-features) •
-[📖 Usage](#-usage) •
-[🛠️ Tools](#️-tools-management) •
-[❓ FAQ](#-faq) •
-[💬 Support](#-support)
+[🚀 Download](#-installation) • [📖 Features](#-features) • [🛠️ Usage](#️-usage) • [💬 Support](#-support)
 
 ---
 
 </div>
 
-## 📸 Screenshots
+## 📸 Overview
 
-<div align="center">
-
-| Dark Theme 🌙 | Light Theme ☀️ |
-|:-:|:-:|
-| ![Dark Theme](screenshots/dark_theme.png) | ![Light Theme](screenshots/light_theme.png) |
-
-</div>
+A modern, lightweight launcher built with AutoHotkey v2 that simplifies launching and managing **Command & Conquer: Generals - Zero Hour**. It features automatic game path detection, GenTool/DXWrapper integration, bilingual support (English/Arabic), and a professional dark/light theme system.
 
 ---
 
 ## ✨ Features
 
-### 🚀 Core Features
-| Feature | Description |
-|---------|-------------|
-| 🌐 **Online Mode** | Launch Generals Online (multiplayer) with one click |
-| 🖥️ **Windowed Mode** | Run the game in windowed mode with GenTool |
-| 🔍 **Auto Detection** | Automatically finds your game installation |
-| ⚡ **Fast Launch** | Optimized for instant game startup |
+### 🚀 Launch Modes
+| Mode | Description |
+|------|-------------|
+| **🌐 Generals Online** | Launch the game via `GeneralsOnlineZH.exe` for online multiplayer (auto-disables GenTool) |
+| **🖥️ Windowed Mode** | Launch with `-win` flag using `Generals.exe` (auto-enables GenTool + EdgeScroller) |
 
-### 🎨 User Interface
-| Feature | Description |
-|---------|-------------|
-| 🌙 **Dark Theme** | Professional dark theme inspired by Discord & GitHub |
-| ☀️ **Light Theme** | Clean and modern light theme |
-| 🔄 **Auto Theme** | Automatically matches your Windows theme |
-| 🌐 **Multi-Language** | Full support for English and Arabic |
+### 🔍 Smart Game Detection
+The launcher uses a **multi-layered search strategy** to automatically find your game installation:
 
-### 🛠️ Tool Management
-| Feature | Description |
-|---------|-------------|
-| 🔧 **GenTool** | Enable, disable, or download GenTool v8.9 |
-| 🎨 **DXWrapper** | GPU fix for black screen & reduced settings |
-| 📂 **Folder Access** | Quick access to game directory |
+1. **Registry Search** — Scans Windows Registry for EA Games / Origin install paths
+2. **Steam Detection** — Checks Steam library folders and common game directories
+3. **Common Paths** — Scans well-known installation directories across all drives
+4. **Deep Search** — Performs an intelligent recursive search (up to 3 levels deep) with keyword-based folder filtering
 
-### 🔒 Smart Features
-| Feature | Description |
-|---------|-------------|
-| 🔎 **Registry Search** | Searches Windows registry for game path |
-| 🎮 **Steam Detection** | Detects Steam installations automatically |
-| 📁 **Deep Search** | Scans all drives with smart folder filtering |
-| 💾 **Auto Save** | Remembers your settings and preferences |
+> ⚡ The search uses an optimized skip-list to avoid scanning system folders like `Windows`, `$Recycle.Bin`, `node_modules`, etc.
+
+### 🔧 Integrated Tools
+
+#### GenTool v8.9
+- ✅ One-click **enable/disable** (renames `d3d8.dll` ↔ `d3d8-.dll`)
+- 📥 **Auto-download** from GitHub releases if not installed
+- 🔄 Automatically managed based on launch mode
+
+#### DXWrapper
+- 🎮 **GPU Fix Black Screen** — Fixes black screen issues on modern GPUs
+- ⚡ **Reduce Settings** — Reduces graphical settings for better performance
+- ✅ One-click **enable/disable** (renames `dxwrapper.dll` ↔ `dxwrapper-.dll`)
+- 📥 **Auto-download** with type selection dialog
+- ⚠️ Note: DXWrapper only works with Generals Online
+
+### 🎨 Theme System
+| Theme | Description |
+|-------|-------------|
+| **🔄 Auto** | Follows Windows system theme (dark/light) |
+| **🌙 Dark** | Professional dark theme inspired by GitHub/Discord |
+| **☀️ Light** | Clean light theme for daytime use |
+
+### 🌐 Bilingual Support
+- **English** 🇬🇧
+- **Arabic** 🇸🇦
+
+Switch languages instantly from the menu bar — the entire UI rebuilds in the selected language.
+
+### ⚙️ Additional Features
+- 🛡️ **Auto-elevate to Administrator** — Required for game compatibility
+- 💾 **Persistent Configuration** — Saves settings to `config.ini` (game path, language, theme)
+- 📂 **Quick Folder Access** — Open game directory directly from the launcher
+- 🔔 **Toast Notifications** — Non-intrusive tooltip notifications for all actions
+- 🖱️ **Clickable Status Bar** — Click the path display to change game location
 
 ---
 
 ## 📋 Requirements
 
-| Requirement | Details |
-|-------------|---------|
-| **OS** | Windows 7 / 8 / 10 / 11 |
-| **Runtime** | AutoHotkey v2.0+ (not needed for .exe version) |
-| **Game** | C&C Generals Zero Hour (any version) |
-| **Internet** | Required only for downloading tools |
-| **Disk Space** | ~2 MB for the launcher |
+- **Operating System:** Windows 7 / 8 / 10 / 11
+- **Runtime:** [AutoHotkey v2.0+](https://www.autohotkey.com/) (if running from source `.ahk`)
+- **Game:** Command & Conquer: Generals - Zero Hour (any version)
+- **Permissions:** Administrator privileges (auto-requested on launch)
 
 ---
 
-## 📥 Installation
+## 🚀 Installation
 
-### Method 1: Download Pre-built EXE (Recommended)
+### Option 1: Pre-compiled Executable (Recommended)
+1. Go to the [**Releases**](../../releases) page
+2. Download the latest `.exe` file
+3. Place it anywhere on your system
+4. Double-click to run — the launcher will auto-detect your game!
 
-1. Go to the [**Releases**](https://github.com/yourusername/zh-launcher/releases) page
-2. Download the latest `ZHLauncher.exe`
-3. Place it anywhere on your computer
-4. Run the launcher — it will find your game automatically!
-
-### Method 2: Run from Source
-
+### Option 2: Run from Source
 1. Install [AutoHotkey v2.0+](https://www.autohotkey.com/)
 2. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/zh-launcher.git
+   git clone https://github.com/brda38900/Additional-content-in-Command-Conquer-Generals-Zero-Hour.git
    ```
-3. Run `ZHLauncher.ahk`
-
-### Method 3: Build from Source
-
-1. Install [AutoHotkey v2.0+](https://www.autohotkey.com/)
-2. Open **Ahk2Exe** (included with AutoHotkey)
-3. Select `ZHLauncher.ahk` as source
-4. Choose output path
-5. Click **Convert**
+3. Run the `.ahk` script:
+   ```
+   Double-click the .ahk file
+   ```
 
 ---
 
-## 📖 Usage
+## 🛠️ Usage
 
-### 🎯 First Launch
+### First Launch
+1. **Run the launcher** — it will automatically search for the game
+2. If auto-detection fails, you'll be prompted to **manually select** the game folder
+3. Select the folder containing `Generals.exe`
 
+### Launching the Game
+
+#### 🌐 Online Mode
 ```
-1. Run ZHLauncher.exe
-2. The launcher automatically searches for your game
-3. If not found, you'll be prompted to select the game folder
-4. Choose the folder containing "Generals.exe"
-5. Done! You're ready to play
+Click "Run Generals Online" → Launches GeneralsOnlineZH.exe
+```
+- Automatically **disables GenTool** (not compatible with online play)
+- Requires `GeneralsOnlineZH.exe` in the game directory
+
+#### 🖥️ Windowed Mode
+```
+Click "Run Windowed Mode" → Launches Generals.exe -win
+```
+- Automatically **enables GenTool** (required for windowed mode)
+- Launches **EdgeScroller** if available
+- If GenTool is missing, offers to download it automatically
+
+### Managing Tools
+
+#### GenTool
+```
+Click "🔧 GenTool" button → Context menu appears
+  ├── ✅ Enable GenTool
+  ├── 🚫 Disable GenTool
+  └── 📥 Download GenTool
 ```
 
-### 🌐 Play Online (Generals Online)
-
+#### DXWrapper
 ```
-1. Click "🌐 Run Generals Online"
-2. GenTool is automatically disabled (not compatible)
-3. The game launches with online multiplayer support
-4. The launcher closes automatically
-```
-
-### 🖥️ Play Windowed Mode
-
-```
-1. Click "🖥️ Run Windowed Mode"
-2. GenTool is automatically enabled (required)
-3. EdgeScroller starts automatically (if available)
-4. The game launches in windowed mode
-5. The launcher closes automatically
+Click "🎨 DXWrapper" button → Context menu appears
+  ├── ✅ Enable DXWrapper
+  ├── 🚫 Disable DXWrapper
+  ├── 🎮 Download GPU Fix
+  └── ⚡ Download Reduce Settings
 ```
 
-### 🔄 Change Game Path
+### Changing Settings
 
-| Method | Steps |
-|--------|-------|
-| **Auto Search** | Menu → 📁 File → 🔍 Auto Search |
-| **Manual Select** | Menu → 📁 File → 📂 Select Path |
-| **Click Status** | Click the path text in the status bar |
-
----
-
-## 🛠️ Tools Management
-
-### 🔧 GenTool v8.9
-
-GenTool enables windowed mode and additional features for Generals Zero Hour.
-
-| Action | How To |
-|--------|--------|
-| **Enable** | Click 🔧 GenTool → ✅ Enable GenTool |
-| **Disable** | Click 🔧 GenTool → 🚫 Disable GenTool |
-| **Download** | Click 🔧 GenTool → 📥 Download GenTool |
-
-> **Note:** GenTool is automatically managed when launching the game.
-> - **Online Mode** → GenTool is disabled
-> - **Windowed Mode** → GenTool is enabled
-
-### 🎨 DXWrapper
-
-DXWrapper fixes graphics issues with Generals Online.
-
-| Version | Purpose |
-|---------|---------|
-| 🎮 **GPU Fix** | Fixes black screen issues on modern GPUs |
-| ⚡ **Reduce Settings** | Reduces graphics settings for better performance |
-
-| Action | How To |
-|--------|--------|
-| **Enable** | Click 🎨 DXWrapper → ✅ Enable DXWrapper |
-| **Disable** | Click 🎨 DXWrapper → 🚫 Disable DXWrapper |
-| **Download GPU** | Click 🎨 DXWrapper → 🎮 GPU Fix Black Screen |
-| **Download Reduce** | Click 🎨 DXWrapper → ⚡ Reduce Settings |
-
-> ⚠️ **Important:** DXWrapper only works with Generals Online mode.
-
----
-
-## 🎨 Themes
-
-The launcher supports three theme modes:
-
-| Theme | Description |
-|-------|-------------|
-| 🔄 **Auto** | Follows your Windows system theme |
-| 🌙 **Dark** | Professional dark theme (GitHub-inspired) |
-| ☀️ **Light** | Clean light theme |
-
-**Change theme:** Menu → ⚙️ Settings → 🎨 Theme
-
----
-
-## 🌐 Languages
-
-| Language | Status |
-|----------|--------|
-| 🇺🇸 English | ✅ Full Support |
-| 🇸🇦 العربية | ✅ Full Support |
-
-**Change language:** Click `🌐 English` or `🌐 عربي` in the menu bar.
+| Setting | How to Change |
+|---------|--------------|
+| **Theme** | Menu Bar → ⚙️ Settings → 🎨 Theme → Select theme |
+| **Language** | Menu Bar → 🌐 English / عربي |
+| **Game Path** | Menu Bar → 📁 File → 📂 Select Path |
+| **Auto Search** | Menu Bar → 📁 File → 🔍 Auto Search |
 
 ---
 
 ## 📁 Project Structure
 
 ```
-zh-launcher/
-├── 📄 ZHLauncher.ahk          # Main source code
-├── 📄 ZHLauncher.exe           # Compiled executable
-├── 📄 config.ini               # Auto-generated settings (after first run)
-├── 📄 README.md                # This file
-├── 📄 LICENSE                  # MIT License
-└── 📁 screenshots/             # Screenshots for documentation
-    ├── 🖼️ dark_theme.png
-    └── 🖼️ light_theme.png
+📦 Project Root
+├── 🎮 Launcher.ahk          # Main launcher script
+├── ⚙️ config.ini             # Auto-generated settings file
+└── 📖 README.md              # This file
 ```
 
----
-
-## ⚙️ Configuration
-
-Settings are stored in `config.ini` (auto-generated):
-
+### Config File Format (`config.ini`)
 ```ini
 [Settings]
-GamePath=C:\Games\Command and Conquer Generals Zero Hour
+GamePath=D:\Games\Command and Conquer Generals Zero Hour
 Language=en
 Theme=auto
 FirstRun=0
 ```
 
-| Setting | Values | Default |
-|---------|--------|---------|
-| `GamePath` | Any valid path | Auto-detected |
-| `Language` | `en`, `ar` | `en` |
-| `Theme` | `auto`, `dark`, `light` | `auto` |
-| `FirstRun` | `0`, `1` | `1` |
-
 ---
 
-## 🔍 Auto Detection
+## 🔧 How It Works
 
-The launcher searches for the game in this order:
+### Architecture Overview
 
 ```
-1️⃣ Windows Registry
-   └── EA Games registry keys
-
-2️⃣ Steam
-   └── steamapps/common/
-
-3️⃣ Common Paths
-   ├── EA Games/
-   ├── Origin Games/
-   ├── R.G. Mechanics/
-   ├── Program Files (x86)/
-   └── Games/
-
-4️⃣ Deep Search
-   └── Scans all drives (smart filtering, max depth: 3)
+┌─────────────────────────────────────────┐
+│              Main()                      │
+│  ├── LoadConfig()                        │
+│  ├── SearchGame() [if no saved path]     │
+│  │   ├── SearchGameInRegistry()          │
+│  │   ├── SearchGameInSteam()             │
+│  │   ├── SearchGameInCommonPaths()       │
+│  │   └── SearchGameDeep()               │
+│  ├── CreateMainGui()                     │
+│  │   ├── Header Section                  │
+│  │   ├── Status Section                  │
+│  │   ├── Launch Buttons                  │
+│  │   ├── Tool Buttons                    │
+│  │   └── Footer                          │
+│  └── AskForPath() [if still no path]     │
+└─────────────────────────────────────────┘
 ```
 
-### Smart Search Features
-- ⏭️ Skips system folders (Windows, ProgramData, etc.)
-- 🎯 Prioritizes game-related folder names
-- 🔄 Avoids duplicate folder scanning
-- ⚡ Optimized for speed with keyword filtering
-
----
-
-## ❓ FAQ
-
-<details>
-<summary><b>🔴 Antivirus flags the launcher as malicious</b></summary>
-
-This is a **false positive**. The launcher is built with AutoHotkey which can trigger antivirus alerts because:
-- It packages a script interpreter inside an EXE
-- It downloads files from the internet (tool downloads)
-- It modifies DLL files (enabling/disabling tools)
-- It reads Windows registry (game detection)
-
-**Solutions:**
-1. Add the launcher to your antivirus exclusion list
-2. Download and run from source code instead
-3. Verify the source code yourself — it's fully open source!
-
-You can verify the file on [VirusTotal](https://www.virustotal.com).
-</details>
-
-<details>
-<summary><b>🔴 Game not found automatically</b></summary>
-
-1. Click **📁 File → 📂 Select Path**
-2. Navigate to your game folder
-3. Select the folder that contains `Generals.exe`
-4. The path should look like:
-   ```
-   C:\EA Games\Command and Conquer Generals Zero Hour
-   ```
-</details>
-
-<details>
-<summary><b>🔴 Generals Online doesn't launch</b></summary>
-
-- Make sure `GeneralsOnlineZH.exe` exists in your game folder
-- Download Generals Online from the official source
-- Try running as administrator
-</details>
-
-<details>
-<summary><b>🔴 Windowed mode doesn't work</b></summary>
-
-- GenTool is required for windowed mode
-- Click **🔧 GenTool → 📥 Download GenTool** to install it
-- Make sure `d3d8.dll` exists in your game folder
-</details>
-
-<details>
-<summary><b>🔴 Black screen when playing</b></summary>
-
-- Download DXWrapper GPU Fix:
-  **🎨 DXWrapper → 🎮 GPU Fix Black Screen**
-- This fixes compatibility issues with modern graphics cards
-</details>
-
-<details>
-<summary><b>🔴 Game runs slowly</b></summary>
-
-- Download DXWrapper Reduce Settings:
-  **🎨 DXWrapper → ⚡ Reduce Settings**
-- This optimizes graphics settings for better performance
-</details>
-
----
-
-## 🔧 Building from Source
-
-### Prerequisites
-- [AutoHotkey v2.0+](https://www.autohotkey.com/)
-- Windows 7 or later
-
-### Compile to EXE
-
-```bash
-# Using Ahk2Exe (GUI)
-1. Open Ahk2Exe (included with AutoHotkey)
-2. Source: ZHLauncher.ahk
-3. Destination: ZHLauncher.exe
-4. Base File: Unicode 64-bit
-5. Click Convert
-
-# Using Command Line
-Ahk2Exe.exe /in "ZHLauncher.ahk" /out "ZHLauncher.exe" /base "AutoHotkey64.exe"
+### GenTool Toggle Mechanism
+```
+Enable:  d3d8-.dll  →  d3d8.dll   (rename)
+Disable: d3d8.dll   →  d3d8-.dll  (rename)
 ```
 
-### Reducing Antivirus False Positives
+### DXWrapper Toggle Mechanism
 ```
-✅ Do NOT use UPX compression
-✅ Add version info and icon
-✅ Sign the executable (see signing guide below)
+Enable:  dxwrapper-.dll  →  dxwrapper.dll   (rename)
+Disable: dxwrapper.dll   →  dxwrapper-.dll  (rename)
 ```
 
 ---
 
-## 📜 Changelog
+## 🐛 Troubleshooting
 
-### v2.4.0 (Latest)
-- ✨ Professional UI with Dark/Light themes
-- 🌐 Multi-language support (English & Arabic)
-- 🔍 Enhanced auto-detection with smart search
-- 🎨 DXWrapper support with GPU Fix & Reduce Settings
-- ⚡ Optimized performance and faster startup
-- 🔧 Improved GenTool management
-- 📂 Quick folder access button
-
-### v2.3.0
-- 🎨 Added theme system
-- 🌐 Added language switching
-- 🔍 Improved game search algorithm
-
-### v2.2.0
-- 🔧 Added GenTool auto-management
-- 🎨 Added DXWrapper support
-- 📂 Added folder access
-
-### v2.1.0
-- 🖥️ Added windowed mode support
-- ⚡ Added EdgeScroller auto-start
-
-### v2.0.0
-- 🚀 Initial release with online mode support
+| Issue | Solution |
+|-------|----------|
+| **Game not found automatically** | Use `📁 File → 📂 Select Path` to manually browse |
+| **"GeneralsOnlineZH.exe not found"** | Make sure Generals Online is installed in the game folder |
+| **GenTool won't enable** | Click `📥 Download GenTool` to install it |
+| **Black screen on launch** | Install DXWrapper (GPU Fix) via the launcher |
+| **Launcher doesn't start** | Right-click → Run as Administrator |
+| **Settings not saving** | Ensure write permissions in the launcher's directory |
 
 ---
 
-## 🤝 Contributing
+## 📥 Downloads (Integrated)
 
-Contributions are welcome! Here's how you can help:
+The launcher can automatically download and install these tools:
 
-1. **Fork** the repository
-2. **Create** a feature branch
-   ```bash
-   git checkout -b feature/amazing-feature
-   ```
-3. **Commit** your changes
-   ```bash
-   git commit -m "Add amazing feature"
-   ```
-4. **Push** to the branch
-   ```bash
-   git push origin feature/amazing-feature
-   ```
-5. Open a **Pull Request**
-
-### Ideas for Contributions
-- [ ] 🌐 Add more languages (French, German, etc.)
-- [ ] 🎨 Add more themes
-- [ ] 🔧 Add more tool integrations
-- [ ] 📊 Add game statistics tracking
-- [ ] 🗺️ Add map manager
+| Tool | Description | Source |
+|------|-------------|--------|
+| **GenTool v8.9** | Game enhancement tool for windowed mode | [GitHub Release](https://github.com/brda38900/Additional-content-in-Command-Conquer-Generals-Zero-Hour/releases/tag/GenTool_v8.9) |
+| **DXWrapper GPU Fix** | Fixes black screen on modern GPUs | [GitHub Release](https://github.com/brda38900/Additional-content-in-Command-Conquer-Generals-Zero-Hour/releases/tag/dxwrapper_GPU) |
+| **DXWrapper Reduce** | Reduces settings for performance | [GitHub Release](https://github.com/brda38900/Additional-content-in-Command-Conquer-Generals-Zero-Hour/releases/tag/dxwrapper_GPU) |
 
 ---
 
 ## 💬 Support
 
-Need help? Have suggestions?
+Need help? Have a suggestion?
 
-| Channel | Link |
-|---------|------|
-| 💬 **Discord** | [Support Channel](https://discord.com/channels/925092720538689536/1279438595190558853) |
-| 👤 **Discord User** | `abdulrahman2023.1` |
-| 🐛 **Bug Reports** | [GitHub Issues](https://github.com/yourusername/zh-launcher/issues) |
+- **Discord:** `abdulrahman2023.1`
+- **Support Channel:** [Open Discord Support](https://discord.com/channels/925092720538689536/1279438595190558853)
+
+---
+
+## 🗺️ Roadmap
+
+- [ ] Custom resolution settings
+- [ ] Mod manager integration
+- [ ] Game replay manager
+- [ ] Auto-update checker for the launcher
+- [ ] More language translations
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
-```
-MIT License
-
-Copyright (c) 2024 Abdulrahman
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
+This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-## ⭐ Star History
+## 🙏 Credits
 
-If you find this project useful, please consider giving it a ⭐!
+- **Developer:** Abdulrahman
+- **Game:** Command & Conquer: Generals - Zero Hour © Electronic Arts
+- **GenTool:** Third-party game enhancement tool
+- **DXWrapper:** DirectX wrapper for compatibility fixes
+- **Built with:** [AutoHotkey v2](https://www.autohotkey.com/)
 
 ---
 
 <div align="center">
 
-### Made with ❤️ by Abdulrahman
+**⭐ If this launcher helped you, consider giving it a star! ⭐**
 
-**C&C Generals Zero Hour Launcher** — Play your favorite game with ease!
-
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github)](https://github.com/yourusername)
-[![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/channels/925092720538689536/1279438595190558853)
+Made with ❤️ by **Abdulrahman**
 
 </div>
 ```
 
 ---
 
-## 📝 ملاحظات مهمة
+<div dir="rtl">
 
-غيّر هذه الأشياء قبل الاستخدام:
+## ✅ الملف يشمل:
 
-```
-1. yourusername  → اسم حسابك على GitHub
-2. أضف صور في مجلد screenshots/
-   - dark_theme.png
-   - light_theme.png
-3. حدّث روابط GitHub Issues و Repository
-```
+1. **عنوان وبادجات** احترافية بأيقونات
+2. **قائمة الميزات** كاملة ومفصلة بجداول
+3. **طريقة التثبيت** (ملف تنفيذي أو من المصدر)
+4. **شرح الاستخدام** خطوة بخطوة
+5. **هيكلية المشروع** مع شرح الملفات
+6. **كيف يعمل البرنامج** (Architecture Overview)
+7. **حل المشاكل** (Troubleshooting) بجدول
+8. **روابط التحميلات** المدمجة
+9. **معلومات الدعم** (Discord)
+10. **خارطة الطريق** المستقبلية (Roadmap)
+11. **الرخصة والشكر**
 
-### لأخذ Screenshots:
-
-```
-1. شغّل التطبيق
-2. اضغط Win + Shift + S
-3. التقط صورة
-4. احفظها في مجلد screenshots/
-```
+</div>
