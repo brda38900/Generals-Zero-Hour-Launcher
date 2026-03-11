@@ -4,7 +4,7 @@
 
 **مُشغّل احترافي | Professional Launcher**
 
-![Version](https://img.shields.io/badge/Version-2.4.0-58a6ff?style=for-the-badge&logo=github)
+![Version](https://img.shields.io/badge/Version-3.0.0-58a6ff?style=for-the-badge&logo=github)
 ![AutoHotkey](https://img.shields.io/badge/AutoHotkey-v2.0+-3fb950?style=for-the-badge&logo=autohotkey)
 ![Platform](https://img.shields.io/badge/Platform-Windows-0078d4?style=for-the-badge&logo=windows)
 ![License](https://img.shields.io/badge/License-Free-d29922?style=for-the-badge)
@@ -27,6 +27,8 @@
 | 🌙 **Dark / Light Theme** | Follows system theme or manual override |
 | 🌐 **Arabic / English UI** | Full bilingual interface support |
 | ⚡ **Admin Auto-Elevate** | Automatically requests admin rights on launch |
+| 🔽 **System Tray Menu** | Run in background, toggle mods, and wake-up instantly |
+| 🛡️ **Robust Download Checks** | Verifies file sizes and extraction integrity |
 
 ---
 
@@ -60,7 +62,7 @@ GenTool adds extra features to Zero Hour, required for **Windowed Mode**.
 
 - **Enable** — Activates `d3d8.dll` in the game folder
 - **Disable** — Deactivates GenTool without deleting it
-- **Download** — Auto-downloads and installs GenTool v8.9
+- **Download** — Auto-downloads and installs GenTool v8.9 from ReizanTech GitHub releases
 
 ### DXWrapper
 Fixes display issues, especially on modern GPUs.
